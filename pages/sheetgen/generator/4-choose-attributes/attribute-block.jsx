@@ -12,8 +12,8 @@ export default function AttributeBlock ({ attribute, onChangeEvent, remainingPoi
 
   return (
     <div>
-      <h1>{ attribute.name }</h1>
-      <p>{ attribute.description }</p>
+      <h1>{ attribute?.name }</h1>
+      <p>{ attribute?.description }</p>
 
       <input
         type="number"

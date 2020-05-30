@@ -5,25 +5,28 @@ import Router from 'next/router'
 import { store } from 'modules/redux_store'
 import { useEffect, useState } from 'react'
 
-export default function() {
-  let [allRaces, setAllRaces] = useState([])
+export async function getServerSideProps() {
+  const fetchData = async () => {
+    return [
+      {
+        name: 'Goblin',
+        description: 'O Goblin é comum'
+      }
+    ]
+  };
 
+  return {
+    props: {
+      allRaces: await fetchData()
+    }
+  }
+}
+
+export default function({ allRaces }) {
   useEffect(() => {
     if (!store.getState().sheet_data.character_name) {
       Router.push('/sheetgen/generator')
     }
-
-    const fetchData = async () => {
-      let result = [
-        {
-          name: 'Goblin',
-          description: 'O Goblin é comum'
-        }
-      ]
-      setAllRaces(result);
-    };
-
-    fetchData()
   }, []);
 
   let selectRace = function ({ e, race }) {
@@ -35,6 +38,7 @@ export default function() {
   let races = function () {
     const options = []
     for (let i = 0; i < allRaces.length; i++) {
+      console.log(allRaces[i])
       options.push(
         <SheetgenRaceBlock
           key={i}
