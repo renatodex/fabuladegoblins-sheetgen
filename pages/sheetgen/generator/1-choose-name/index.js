@@ -9,8 +9,16 @@ export default function() {
     store.getState().sheet_data.character_name,
   )
 
+  let [playerName, setPlayerName] = useState(
+    store.getState().sheet_data.player_name,
+  )
+
   var onSubmit = function (e) {
-    store.dispatch({ type: 'SET_CHARACTER_NAME', name: characterName })
+    store.dispatch({
+      type: 'SET_NAMES',
+      character_name: characterName,
+      player_name: playerName,
+    })
     Router.push('/sheetgen/generator/2-choose-race')
     e.preventDefault()
   }
@@ -25,6 +33,18 @@ export default function() {
         <h1 className={styles.title}>Passo 1</h1>
 
         <form onSubmit={onSubmit}>
+          <div style={{
+            'margin-bottom': '10px',
+          }}>
+            <label>Nome do Jogador</label>
+            <input
+              type="text"
+              name="player_name"
+              defaultValue={playerName}
+              onChange={e => setPlayerName(e.target.value)}
+            />
+          </div>
+
           <div>
             <label>Nome do Personagem</label>
             <input

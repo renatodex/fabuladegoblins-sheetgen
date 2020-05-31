@@ -1,6 +1,8 @@
+import styles from './style.module.scss'
+
 export default function EquipmentBlock ({ equipmentData, onSelectEquipmentEvent, selected }) {
   return (
-    <div>
+    <div className={styles['equipment-block']}>
       <h1>{ equipmentData?.name } {selected && (
           <span>(selected)</span>
         )}</h1>

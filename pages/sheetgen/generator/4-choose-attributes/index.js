@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react'
 import { store } from 'modules/redux_store'
 
 export default function() {
-  const MAX_ATTRIBUTE_POINTS = 24
+  const MAX_ATTRIBUTE_POINTS = 30
 
   let [attributeValues, setAttributeValues] = useState({
     strength: 0,
@@ -104,10 +104,14 @@ export default function() {
       </Head>
 
       <main>
-        <h1 className={styles.title}>Passo 4 - Defina seus Atributos</h1>
-        <h2>Você possui {remainingPoints} de {maxPoints} pontos para distribuir.</h2>
+        <div className={styles['attribute-header']}>
+          <h1 className={styles.title}>Passo 4 - Defina seus Atributos</h1>
+          <h2>Você possui {remainingPoints} de {maxPoints} pontos para distribuir.</h2>
+        </div>
 
-        { attributes() }
+        <div className={styles['options-grid']}>
+          { attributes() }
+        </div>
 
         <form onSubmit={onSubmit}>
           <div>

@@ -12,3 +12,7 @@ export async function fetchApi (path) {
 export function mapAirtableRow(row) {
   return { id: row.id, createdTime: row.createdTime, ...row.fields }
 }
+
+export default function () {
+  return true
+}

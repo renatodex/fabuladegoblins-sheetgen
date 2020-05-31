@@ -17,11 +17,11 @@ export async function getServerSideProps() {
 }
 
 export default function({ allRaces }) {
-  useEffect(() => {
-    if (!store.getState().sheet_data.character_name) {
-      Router.push('/sheetgen/generator')
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (!store.getState().sheet_data.character_name) {
+  //     Router.push('/sheetgen/generator')
+  //   }
+  // }, []);
 
   let selectRace = function ({ e, race }) {
     console.log('TODO: Guardar Escolha', e, race)
@@ -54,7 +54,9 @@ export default function({ allRaces }) {
       <main>
         <h1 className={styles.title}>Passo 2 - Selecione sua Raça</h1>
 
-        { races() }
+        <div className={styles['options-grid']}>
+          { races() }
+        </div>
       </main>
     </div>
   )

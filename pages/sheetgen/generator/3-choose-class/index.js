@@ -17,11 +17,11 @@ export async function getServerSideProps() {
 }
 
 export default function({ allClasses }) {
-  useEffect(() => {
-    if (!store.getState().sheet_data.character_name) {
-      Router.push('/sheetgen/generator')
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (!store.getState().sheet_data.character_name) {
+  //     Router.push('/sheetgen/generator')
+  //   }
+  // }, []);
 
   let selectClass = function ({ e, selectedClass }) {
     console.log('TODO: Guardar Escolha', e, selectedClass)
@@ -53,7 +53,9 @@ export default function({ allClasses }) {
       <main>
         <h1 className={styles.title}>Passo 3 - Selecione sua Classe</h1>
 
-        { classes() }
+        <div className={styles['options-grid']}>
+          { classes() }
+        </div>
       </main>
     </div>
   )

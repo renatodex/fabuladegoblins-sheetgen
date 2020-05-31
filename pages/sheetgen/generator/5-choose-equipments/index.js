@@ -12,9 +12,9 @@ export default function() {
   let [selectedArmor, setSelectedArmor] = useState({})
 
   useEffect(() => {
-    if (!store.getState().sheet_data.character_name) {
-      Router.push('/sheetgen/generator')
-    }
+    // if (!store.getState().sheet_data.character_name) {
+    //   Router.push('/sheetgen/generator')
+    // }
 
     const loadEquipments = async () => {
       let weaponsData = [
@@ -114,12 +114,12 @@ export default function() {
 
         <form onSubmit={onSubmit}>
 
-          <section>
+          <section className={styles['equip-category']}>
             <h2>Armas</h2>
             { weapons() }
           </section>
 
-          <section>
+          <section className={styles['equip-category']}>
             <h2>Armaduras</h2>
             { armors() }
           </section>

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import styles from './style.module.scss'
 
 export default function AttributeBlock ({ attribute, onChangeEvent, remainingPoints }) {
   const [value, setValue] = useState(0);
@@ -10,9 +11,11 @@ export default function AttributeBlock ({ attribute, onChangeEvent, remainingPoi
     onChangeEvent({ e, attribute, newValue })
   }
 
+  let modifier = Math.floor(value / 3) - 2;
+
   return (
-    <div>
-      <h1>{ attribute?.name }</h1>
+    <div className={styles['attribute-block']}>
+      <h1>{ attribute?.name }<span> ({modifier > 0 && '+'}{modifier})</span></h1>
       <p>{ attribute?.description }</p>
 
       <input

@@ -3,9 +3,10 @@ import { createStore, combineReducers } from 'redux'
 let sheetDataReducer = function (state = {}, action) {
   console.log('Action', action)
 
-  if (action.type == 'SET_CHARACTER_NAME') {
+  if (action.type == 'SET_NAMES') {
     return Object.assign(state, {
-      character_name: action.name,
+      character_name: action.character_name,
+      player_name: action.player_name,
     })
   }
 

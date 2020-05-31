@@ -1,3 +1,23 @@
-.title {
-  color: red;
+.attribute-header {
+  margin-bottom: 34px;
+  border-bottom: 3px solid #000;
+  padding-bottom: 20px;
+}
+
+.attribute-block {
+  margin-bottom: 21px;
+  border-bottom: 3px solid #000;
+  padding-bottom: 14px;
+
+  p {
+    line-height: 21px;
+  }
+}
+
+.options-grid {
+  @media screen and (min-width: 700px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 14px;
+  }
 }

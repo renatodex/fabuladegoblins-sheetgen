@@ -20,6 +20,10 @@ header {
 
 .appLogo {
   margin-bottom: 14px;
+
+  @media screen and (min-width: 700px) {
+    width: 400px;
+  }
 }
 
 .sheetGen {
@@ -28,4 +32,10 @@ header {
   border-radius: 12px;
   background-color: #ccc;
   padding: 21px;
+
+  @media screen and (min-width: 700px) {
+    min-width: 701px;
+    max-width: 1024px;
+    padding: 35px;
+  }
 }
