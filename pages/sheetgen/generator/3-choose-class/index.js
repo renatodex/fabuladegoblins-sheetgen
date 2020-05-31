@@ -4,42 +4,23 @@ import SheetgenClassBlock from './class-block'
 import Router from 'next/router'
 import { useEffect, useState } from 'react'
 import { store } from 'modules/redux_store'
+import { fetchApi } from 'pages/airtable_client'
 
-export default function() {
-  let [allClasses, setAllClasses] = useState([])
+export async function getServerSideProps() {
+  const fetchData = await fetchApi('classes')
 
+  return {
+    props: {
+      allClasses: fetchData
+    }
+  }
+}
+
+export default function({ allClasses }) {
   useEffect(() => {
     if (!store.getState().sheet_data.character_name) {
       Router.push('/sheetgen/generator')
     }
-    
-    const fetchData = async () => {
-      let result = [
-        {
-          name: 'Aventureiro',
-          description: 'Esse luta com a Espada'
-        },
-        {
-          name: 'Caçador',
-          description: 'Esse luta com o Arco'
-        },
-        {
-          name: 'Arcanista',
-          description: 'Esse luta com a Magia'
-        },
-        {
-          name: 'Sacerdote',
-          description: 'Esse luta com a Fé'
-        },
-        {
-          name: 'Fortuno',
-          description: 'Esse luta com a Sorte'
-        },
-      ]
-      setAllClasses(result);
-    };
-
-    fetchData()
   }, []);
 
   let selectClass = function ({ e, selectedClass }) {
