@@ -7,7 +7,10 @@ export default function ClassBlock ({ classData, onClickEvent }) {
       <h1>{ classData?.name }</h1>
       <p>{ classData?.description }</p>
 
-      <button onClick={(e) => { onClickEvent({ e, selectedClass: classData }) }}>
+      <button
+        onClick={(e) => { onClickEvent({ e, selectedClass: classData }) }}
+        disabled={!classData.available}
+      >
         Selecionar
       </button>
     </div>

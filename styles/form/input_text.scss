@@ -1,0 +1,9 @@
+.input_text {
+  padding: 7px;
+
+}
+
+input[type=text], input[type=number] {
+  @extend .input_text;
+  display: block;
+}

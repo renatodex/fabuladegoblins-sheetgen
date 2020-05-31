@@ -15,7 +15,7 @@ export default function Start() {
         <p>Esse gerador lhe auxiliará a criar sua ficha passo a passo.</p>
 
         <Link href="/sheetgen/generator/1-choose-name">
-          <a>Nova Ficha</a>
+          <a className={'button'}>Nova Ficha</a>
         </Link>
       </main>
 

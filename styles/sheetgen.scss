@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700;900&display=swap');
+
+body {
+  font-family: Lato, Helvetica, Arial;
+  padding: 21px;
+}
+
+h1 {
+  color: #000;
+  font-weight: 900;
+  margin: 0;
+  font-size: 28px;
+  margin-bottom: 14px;
+}
+
+header {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.appLogo {
+  margin-bottom: 14px;
+}
+
+.sheetGen {
+  margin: 0 auto;
+  border: 8px solid #000;
+  border-radius: 12px;
+  background-color: #ccc;
+  padding: 21px;
+}
