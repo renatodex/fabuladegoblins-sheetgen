@@ -4,7 +4,7 @@ export async function list (resource, options = {}) {
   const API_KEY = process.env.AIRTABLE_API_KEY
 
   const data = await fetch(
-    `${BASE_URL}/${APP_ID}/${resource}?maxRecords=${options.maxRecords || 3}&view=${options.view || 'Grid%20view'}`,
+    `${BASE_URL}/${APP_ID}/${resource}?maxRecords=${options.maxRecords || 20}&view=${options.view || 'Grid%20view'}`,
     { headers: { 'Authorization': `Bearer ${API_KEY}` }
   })
 

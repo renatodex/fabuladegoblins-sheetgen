@@ -4,20 +4,14 @@ import SheetgenRaceBlock from './race-block'
 import Router from 'next/router'
 import { store } from 'modules/redux_store'
 import { useEffect, useState } from 'react'
+import { fetchApi } from 'pages/airtable_client'
 
 export async function getServerSideProps() {
-  const fetchData = async () => {
-    return [
-      {
-        name: 'Goblin',
-        description: 'O Goblin é comum'
-      }
-    ]
-  };
+  const fetchData = await fetchApi('races')
 
   return {
     props: {
-      allRaces: await fetchData()
+      allRaces: fetchData
     }
   }
 }
