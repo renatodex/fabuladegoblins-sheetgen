@@ -17,11 +17,11 @@ export async function getServerSideProps() {
 }
 
 export default function({ allRaces }) {
-  // useEffect(() => {
-  //   if (!store.getState().sheet_data.character_name) {
-  //     Router.push('/sheetgen/generator')
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (process.env.NEXT_PUBLIC_SKIP_STEPS && !store.getState().sheet_data.character_name) {
+      Router.push('/sheetgen/generator')
+    }
+  }, []);
 
   let selectRace = function ({ e, race }) {
     console.log('TODO: Guardar Escolha', e, race)

@@ -34,7 +34,7 @@ export default function() {
 
         <form onSubmit={onSubmit}>
           <div style={{
-            'margin-bottom': '10px',
+            'marginBottom': '10px',
           }}>
             <label>Nome do Jogador</label>
             <input
