@@ -26,8 +26,8 @@ export default function () {
       Router.push('/sheetgen/generator')
     }
   }, [])
-  //
-  //   props = getProps()
+
+  props = getProps()
   //
   //
   //   attributes = props.attributes_data
