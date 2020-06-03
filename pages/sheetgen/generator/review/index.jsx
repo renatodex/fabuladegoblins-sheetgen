@@ -42,9 +42,8 @@ export default function () {
   let agility = parseInt(attributes?.agility)
   let weaponAttackBonus = parseInt(selectedWeapon?.attack_bonus) || 0
   let armorDefenseBonus = parseInt(selectedArmor?.defense_bonus) || 0
-
-  let attackPoints = 10 + calculateModifier(parseInt(attributes[selectedWeaponAttribute])) + weaponAttackBonus
-  let defensePoints = 10 + calculateModifier(Math.max(strength, agility)) + armorDefenseBonus
+  attackPoints = 10 + calculateModifier(parseInt(attributes[selectedWeaponAttribute])) + weaponAttackBonus
+  defensePoints = 10 + calculateModifier(Math.max(strength, agility)) + armorDefenseBonus
 
   return (
     <div>
