@@ -8,7 +8,7 @@ export async function list (resource, options = {}) {
   options.filterByFormula = encodeURIComponent(options.filterByFormula || '')
 
   let url = `${BASE_URL}/${APP_ID}/${resource}?maxRecords=${options.maxRecords}&view=${options.view}&filterByFormula=${options.filterByFormula}`
-  console.log(url)
+  console.log('URL', url)
 
   const data = await fetch(
     url,

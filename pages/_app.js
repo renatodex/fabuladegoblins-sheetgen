@@ -15,7 +15,7 @@ Router.events.on('routeChangeError', () => NProgress.done());
 
 // This default export is required in a new `pages/_app.js` file.
 export default function MyApp({ Component, pageProps }) {
-  console.log(process.server)
+  console.log('Server', process.server)
   return (
     <div>
       <header>

@@ -32,7 +32,7 @@ export default function({ allRaces }) {
   let races = function () {
     const options = []
     for (let i = 0; i < allRaces.length; i++) {
-      console.log(allRaces[i])
+      console.log('All Races', allRaces[i])
       options.push(
         <SheetgenRaceBlock
           key={i}

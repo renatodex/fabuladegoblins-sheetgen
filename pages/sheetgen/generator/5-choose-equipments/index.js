@@ -36,7 +36,7 @@ export default function({ allWeapons, allArmors }) {
   let [selectedWeapon, setSelectedWeapon] = useState({})
   let [selectedArmor, setSelectedArmor] = useState({})
 
-  console.log(allWeapons)
+  console.log('All Weapons', allWeapons)
 
   useEffect(() => {
     if (process.env.NEXT_PUBLIC_SKIP_STEPS && !store.getState().sheet_data.character_name) {
