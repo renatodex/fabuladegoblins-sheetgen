@@ -21,11 +21,11 @@ export default function () {
     return Math.floor(amount / 3) - 2
   }
 
-  //
-  // if (process.browser) {
-  //   if (process.env.NEXT_PUBLIC_SKIP_STEPS && !store.getState().sheet_data.character_name) {
-  //     Router.push('/sheetgen/generator')
-  //   }
+  useEffect(() => {
+    if (process.env.NEXT_PUBLIC_SKIP_STEPS && !store.getState().sheet_data.character_name) {
+      Router.push('/sheetgen/generator')
+    }
+  }, [])
   //
   //   props = getProps()
   //
@@ -49,7 +49,6 @@ export default function () {
   //
   //   let attackPoints = 10 + calculateModifier(parseInt(attributes[selectedWeaponAttribute])) + weaponAttackBonus
   //   let defensePoints = 10 + calculateModifier(Math.max(strength, agility)) + armorDefenseBonus
-  // }
 
   return (
     <div>
