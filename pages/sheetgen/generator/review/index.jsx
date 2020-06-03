@@ -28,27 +28,26 @@ export default function () {
   }, [])
 
   props = getProps()
-  //
-  //
-  //   attributes = props.attributes_data
-  //   let selectedWeapon = props.selected_weapon
-  //   let selectedWeaponAttribute = props.selected_weapon?.attribute__handle?.[0]
-  //   let selectedArmor = props.selected_armor
-  //
-  //   let initialHp = parseInt(props.class_data?.initial_hp)
-  //   let initialMp = parseInt(props.class_data?.initial_mp)
-  //
-  //   let hpPoints = initialHp + parseInt(attributes?.strength)
-  //   let mpPoints = initialMp + parseInt(attributes?.intelligence)
-  //
-  //   let strength = parseInt(attributes?.strength)
-  //   let agility = parseInt(attributes?.agility)
-  //
-  //   let weaponAttackBonus = parseInt(selectedWeapon?.attack_bonus) || 0
-  //   let armorDefenseBonus = parseInt(selectedArmor?.defense_bonus) || 0
-  //
-  //   let attackPoints = 10 + calculateModifier(parseInt(attributes[selectedWeaponAttribute])) + weaponAttackBonus
-  //   let defensePoints = 10 + calculateModifier(Math.max(strength, agility)) + armorDefenseBonus
+
+  attributes = props?.attributes_data
+  let selectedWeapon = props?.selected_weapon
+  let selectedWeaponAttribute = props?.selected_weapon?.attribute__handle?.[0]
+  let selectedArmor = props?.selected_armor
+
+    // let initialHp = parseInt(props.class_data?.initial_hp)
+    // let initialMp = parseInt(props.class_data?.initial_mp)
+    //
+    // let hpPoints = initialHp + parseInt(attributes?.strength)
+    // let mpPoints = initialMp + parseInt(attributes?.intelligence)
+    //
+    // let strength = parseInt(attributes?.strength)
+    // let agility = parseInt(attributes?.agility)
+    //
+    // let weaponAttackBonus = parseInt(selectedWeapon?.attack_bonus) || 0
+    // let armorDefenseBonus = parseInt(selectedArmor?.defense_bonus) || 0
+    //
+    // let attackPoints = 10 + calculateModifier(parseInt(attributes[selectedWeaponAttribute])) + weaponAttackBonus
+    // let defensePoints = 10 + calculateModifier(Math.max(strength, agility)) + armorDefenseBonus
 
   return (
     <div>
