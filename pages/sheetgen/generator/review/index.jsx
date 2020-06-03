@@ -28,11 +28,11 @@ export default function () {
   let initialHp = parseInt(props.class_data?.initial_hp)
   let initialMp = parseInt(props.class_data?.initial_mp)
 
-  let hpPoints = initialHp + parseInt(attributes.strength)
-  let mpPoints = initialMp + parseInt(attributes.intelligence)
+  let hpPoints = initialHp + parseInt(attributes?.strength)
+  let mpPoints = initialMp + parseInt(attributes?.intelligence)
 
-  let strength = parseInt(attributes.strength)
-  let agility = parseInt(attributes.agility)
+  let strength = parseInt(attributes?.strength)
+  let agility = parseInt(attributes?.agility)
 
   let weaponAttackBonus = parseInt(selectedWeapon?.attack_bonus) || 0
   let armorDefenseBonus = parseInt(selectedArmor?.defense_bonus) || 0
@@ -72,19 +72,19 @@ export default function () {
             ].join(' ')
         }>
           <div className={styles["attribute_block"]}>
-            <h2 className={styles["attribute-label"]}>Força <span>{attributes.strength}</span> ({ calculateModifier(attributes.strength) })</h2>
+            <h2 className={styles["attribute-label"]}>Força <span>{attributes?.strength}</span> ({ calculateModifier(attributes?.strength) })</h2>
           </div>
           <div className={styles["attribute_block"]}>
-            <h2 className={styles["attribute-label"]}>Agilidade <span>{attributes.agility}</span> ({ calculateModifier(attributes.agility) })</h2>
+            <h2 className={styles["attribute-label"]}>Agilidade <span>{attributes?.agility}</span> ({ calculateModifier(attributes?.agility) })</h2>
           </div>
           <div className={styles["attribute_block"]}>
-            <h2 className={styles["attribute-label"]}>Inteligencia <span>{attributes.intelligence}</span> ({ calculateModifier(attributes.intelligence) })</h2>
+            <h2 className={styles["attribute-label"]}>Inteligencia <span>{attributes?.intelligence}</span> ({ calculateModifier(attributes?.intelligence) })</h2>
           </div>
           <div className={styles["attribute_block"]}>
-            <h2 className={styles["attribute-label"]}>Carisma <span>{attributes.charisma}</span> ({ calculateModifier(attributes.charisma) })</h2>
+            <h2 className={styles["attribute-label"]}>Carisma <span>{attributes?.charisma}</span> ({ calculateModifier(attributes?.charisma) })</h2>
           </div>
           <div className={styles["attribute_block"]}>
-            <h2 className={styles["attribute-label"]}>Destino <span>{attributes.destiny}</span> ({ calculateModifier(attributes.destiny) })</h2>
+            <h2 className={styles["attribute-label"]}>Destino <span>{attributes?.destiny}</span> ({ calculateModifier(attributes?.destiny) })</h2>
           </div>
         </div>
 
