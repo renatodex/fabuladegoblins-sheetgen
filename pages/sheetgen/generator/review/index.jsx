@@ -2,12 +2,12 @@ import styles from './style.module.scss'
 import { store } from 'modules/redux_store'
 import { useEffect } from 'react'
 
-// export function getProps() {
-//   let sheetData = store.getState().sheet_data
-//   return {
-//     ...sheetData
-//   }
-// }
+export function getProps() {
+  let sheetData = store.getState().sheet_data
+  return {
+    ...sheetData
+  }
+}
 
 export default function () {
   let attributes = {}
