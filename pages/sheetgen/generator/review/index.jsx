@@ -10,12 +10,7 @@ export function getProps() {
 }
 
 export default function () {
-  let attributes = {}
   let props = {}
-  let hpPoints
-  let mpPoints
-  let attackPoints
-  let defensePoints
 
   let calculateModifier = function (amount) {
     return Math.floor(amount / 3) - 2
@@ -29,21 +24,21 @@ export default function () {
 
   props = getProps()
 
-  attributes = props?.attributes_data
+  let attributes = props?.attributes_data || {}
   let selectedWeapon = props?.selected_weapon
   let selectedWeaponAttribute = props?.selected_weapon?.attribute__handle?.[0]
   let selectedArmor = props?.selected_armor
 
   let initialHp = parseInt(props.class_data?.initial_hp)
   let initialMp = parseInt(props.class_data?.initial_mp)
-  hpPoints = initialHp + parseInt(attributes?.strength)
-  mpPoints = initialMp + parseInt(attributes?.intelligence)
+  let hpPoints = initialHp + parseInt(attributes?.strength)
+  let mpPoints = initialMp + parseInt(attributes?.intelligence)
   let strength = parseInt(attributes?.strength)
   let agility = parseInt(attributes?.agility)
   let weaponAttackBonus = parseInt(selectedWeapon?.attack_bonus) || 0
   let armorDefenseBonus = parseInt(selectedArmor?.defense_bonus) || 0
-  attackPoints = 10 + calculateModifier(parseInt(attributes?.[selectedWeaponAttribute] || 0)) + weaponAttackBonus
-  defensePoints = 10 + calculateModifier(Math.max(strength, agility)) + armorDefenseBonus
+  let attackPoints = 10 + calculateModifier(parseInt(attributes?.[selectedWeaponAttribute] || 0)) + weaponAttackBonus
+  let defensePoints = 10 + calculateModifier(Math.max(strength, agility)) + armorDefenseBonus
 
   return (
     <div>
