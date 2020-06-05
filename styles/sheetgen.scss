@@ -28,14 +28,20 @@ header {
 
 .sheetGen {
   margin: 0 auto;
-  border: 8px solid #000;
-  border-radius: 12px;
-  background-color: #ccc;
-  padding: 21px;
 
   @media screen and (min-width: 700px) {
     min-width: 701px;
     max-width: 1024px;
-    padding: 35px;
+  }
+
+  &__block {
+    border: 8px solid #000;
+    border-radius: 12px;
+    background-color: #ccc;
+    padding: 21px;
+
+    @media screen and (min-width: 700px) {
+      padding: 35px;
+    }
   }
 }
