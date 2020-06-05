@@ -54,7 +54,7 @@ export default function({ allWeapons, allArmors }) {
         weapon: selectedWeapon,
         armor: selectedArmor,
       })
-      Router.push('/sheetgen/generator/review')
+      Router.push('/sheetgen/generator/6-choose-spells')
     }
     e.preventDefault()
   }

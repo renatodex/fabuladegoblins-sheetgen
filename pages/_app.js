@@ -26,6 +26,9 @@ export default function MyApp({ Component, pageProps }) {
               <p><Link href="/sheetgen/generator/1-choose-name"><a>Passo 1 - Escolher Nomes</a></Link></p>
               <p><Link href="/sheetgen/generator/2-choose-race"><a>Passo 2 - Escolher Raça</a></Link></p>
               <p><Link href="/sheetgen/generator/3-choose-class"><a>Passo 3 - Escolher Classe</a></Link></p>
+              <p><Link href="/sheetgen/generator/4-choose-attributes"><a>Passo 4 - Escolher Atributos</a></Link></p>
+              <p><Link href="/sheetgen/generator/5-choose-equipments"><a>Passo 5 - Escolher Equipamentos</a></Link></p>
+              <p><Link href="/sheetgen/generator/6-choose-spells"><a>Passo 5 - Escolher Habilidades</a></Link></p>
               <p><Link href="/sheetgen/generator/review"><a>Review</a></Link></p>
             </nav>
           )
