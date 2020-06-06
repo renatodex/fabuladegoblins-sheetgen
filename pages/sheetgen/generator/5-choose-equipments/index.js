@@ -141,12 +141,10 @@ export default function({ allWeapons, allArmors, allGrimos }) {
       </Head>
 
       <main>
-        <h1 className={styles.title}>Passo 5 - Escolher Equipamentos</h1>
-
         <form onSubmit={onSubmit}>
 
           <section className={styles['equip-category']}>
-            <h2>Armas</h2>
+            <h1 className={'white-title'}>Passo 5.1 - Escolher Arma</h1>
 
             <div className={styles['options-grid']}>
               { weapons() }
@@ -154,7 +152,7 @@ export default function({ allWeapons, allArmors, allGrimos }) {
           </section>
 
           <section className={styles['equip-category']}>
-            <h2>Armaduras</h2>
+            <h1 className={'white-title'}>Passo 5.2 - Escolher Armadura</h1>
 
             <div className={styles['options-grid']}>
               { armors() }
@@ -162,7 +160,7 @@ export default function({ allWeapons, allArmors, allGrimos }) {
           </section>
 
           <section className={styles['equip-category']}>
-            <h2>Grimos</h2>
+            <h1 className={'white-title'}>Passo 5.3 - Escolher Grimo Inicial</h1>
 
             <div className={styles['options-grid']}>
               { grimos() }

@@ -30,7 +30,7 @@ export default function() {
       </Head>
 
       <main>
-        <h1 className={styles.title}>Passo 1</h1>
+        <h1 className={'white-title'}>Passo 1 - Informe seu nome e o do Personagem</h1>
 
         <form onSubmit={onSubmit}>
           <div style={{

@@ -53,7 +53,7 @@ export default function({ allClasses }) {
       </Head>
 
       <main>
-        <h1 className={styles.title}>Passo 3 - Selecione sua Classe</h1>
+        <h1 className={'white-title'}>Passo 3 - Selecione sua Classe</h1>
 
         <div className={styles['options-grid']}>
           { classes() }

@@ -29,7 +29,6 @@ export default function SpellBlock ({ spellData, onSelectSpellEvent, selected })
   }
 
   let actionType = spellData?.['action_type']?.[0]
-  console.log(actionType)
 
   return (
     <div className={styles['spell-block']}>
@@ -98,7 +97,7 @@ export default function SpellBlock ({ spellData, onSelectSpellEvent, selected })
         ) }
       </div>
 
-      <button onClick={(e) => { onSelectSpellEvent({ e, spellData }) }}>
+      <button onClick={(e) => { onSelectSpellEvent({ e, spellData, selected }) }}>
         Selecionar
       </button>
     </div>

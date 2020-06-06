@@ -105,7 +105,7 @@ export default function() {
 
       <main>
         <div className={styles['attribute-header']}>
-          <h1 className={styles.title}>Passo 4 - Defina seus Atributos</h1>
+          <h1 className={'white-title'}>Passo 4 - Defina seus Atributos</h1>
           <h2>Você possui {remainingPoints} de {maxPoints} pontos para distribuir.</h2>
         </div>
 

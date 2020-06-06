@@ -32,6 +32,14 @@ let sheetDataReducer = function (state = {}, action) {
     return Object.assign(state, {
       selected_weapon: action.weapon,
       selected_armor: action.armor,
+      selected_grimo: action.grimo,
+    })
+  }
+
+  if (action.type == 'SET_SPELLS') {
+    return Object.assign(state, {
+      spells: action.spells,
+      ultimates: action.ultimates,
     })
   }
 

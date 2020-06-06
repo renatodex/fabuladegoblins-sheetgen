@@ -52,7 +52,7 @@ export default function({ allRaces }) {
       </Head>
 
       <main>
-        <h1 className={styles.title}>Passo 2 - Selecione sua Raça</h1>
+        <h1 className={'white-title'}>Passo 2 - Selecione sua Raça</h1>
 
         <div className={styles['options-grid']}>
           { races() }
