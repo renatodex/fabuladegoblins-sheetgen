@@ -24,19 +24,24 @@ export async function getServerSideProps({ req }) {
     return handles.includes('weapon')
   })
 
+  let grimos = fetchData.filter((item) => {
+    let handles = item['_item_types__handle'].join(',')
+    return handles.includes('grimo')
+  })
+
   return {
     props: {
       allWeapons: weapons,
       allArmors: armors,
+      allGrimos: grimos,
     }
   }
 }
 
-export default function({ allWeapons, allArmors }) {
+export default function({ allWeapons, allArmors, allGrimos }) {
   let [selectedWeapon, setSelectedWeapon] = useState({})
   let [selectedArmor, setSelectedArmor] = useState({})
-
-  console.log('All Weapons', allWeapons)
+  let [selectedGrimo, setSelectedGrimo] = useState({})
 
   useEffect(() => {
     if (process.env.NEXT_PUBLIC_SKIP_STEPS && !store.getState().sheet_data.character_name) {
@@ -46,13 +51,14 @@ export default function({ allWeapons, allArmors }) {
 
 
   let onSubmit = function (e) {
-    if (!selectedWeapon || !selectedArmor) {
-      alert('Selecione sua Arma e Armadura iniciais!')
+    if (!selectedWeapon || !selectedArmor || !selectedGrimo) {
+      alert('Selecione sua Arma, Armadura e Grimo iniciais!')
     } else {
       store.dispatch({
         type: 'SET_EQUIPMENTS',
         weapon: selectedWeapon,
         armor: selectedArmor,
+        grimo: selectedGrimo,
       })
       Router.push('/sheetgen/generator/6-choose-spells')
     }
@@ -63,8 +69,10 @@ export default function({ allWeapons, allArmors }) {
     console.log('Selecionou', e, equipmentData)
     if (equipmentData['_item_types__handle'] == 'armor') {
       setSelectedArmor(equipmentData)
-    } else {
+    } else if(equipmentData['_item_types__handle'] == 'weapon') {
       setSelectedWeapon(equipmentData)
+    } else {
+      setSelectedGrimo(equipmentData)
     }
     e.preventDefault()
   }
@@ -72,8 +80,10 @@ export default function({ allWeapons, allArmors }) {
   let checkIfSelected = function (equipment) {
     if (equipment['_item_types__handle'] == 'armor') {
       return equipment.handle == selectedArmor.handle
-    } else {
+    } else if (equipment['_item_types__handle'] == 'weapon') {
       return equipment.handle == selectedWeapon.handle
+    } else {
+      return equipment.handle == selectedGrimo.handle
     }
   }
 
@@ -105,6 +115,21 @@ export default function({ allWeapons, allArmors }) {
         />
       )
     }
+    return options
+  }
+
+  let grimos = function () {
+    const options = []
+    for (let i = 0; i < allGrimos.length; i++) {
+      options.push(
+        <SheetgenEquipmentBlock
+          key={i}
+          equipmentData={allGrimos[i]}
+          onSelectEquipmentEvent={onSelectEquipmentEvent}
+          selected={checkIfSelected(allGrimos[i])}
+        />
+      )
+    }
 
     return options
   }
@@ -133,6 +158,14 @@ export default function({ allWeapons, allArmors }) {
 
             <div className={styles['options-grid']}>
               { armors() }
+            </div>
+          </section>
+
+          <section className={styles['equip-category']}>
+            <h2>Grimos</h2>
+
+            <div className={styles['options-grid']}>
+              { grimos() }
             </div>
           </section>
 
