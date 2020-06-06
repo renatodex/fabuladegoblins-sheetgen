@@ -46,9 +46,9 @@ export default function () {
   let armorName = props.selected_armor?.name
   let grimoName = props.selected_grimo?.name
 
-  let spell1 = props.spells[0]
-  let spell2 = props.spells[1]
-  let spell3 = props.ultimates[0]
+  let spell1 = props.spells?.[0]
+  let spell2 = props.spells?.[1]
+  let spell3 = props.ultimates?.[0]
 
   let classImageUrl = props?.class_data?.attachments?.[0]?.url
 
@@ -174,13 +174,13 @@ export default function () {
               ].join(' ')
           }>
             <div className={styles["attribute_block"]}>
-              <h2 className={styles["attribute-label"]}>{spell1.name}</h2>
+              <h2 className={styles["attribute-label"]}>{spell1?.name}</h2>
             </div>
             <div className={styles["attribute_block"]}>
-              <h2 className={styles["attribute-label"]}>{spell2.name}</h2>
+              <h2 className={styles["attribute-label"]}>{spell2?.name}</h2>
             </div>
             <div className={styles["attribute_block"]}>
-              <h2 className={styles["attribute-label"]}>{spell3.name}</h2>
+              <h2 className={styles["attribute-label"]}>{spell3?.name}</h2>
             </div>
           </div>
         </div>
