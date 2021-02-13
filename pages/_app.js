@@ -67,7 +67,7 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <div>
       <header>
-        <img className={'appLogo'} src='/logo.png' width={300} />
+        <img className={'appLogo'} src='/logo.png' style={{width: '290px'}} />
         {
           process.env.NEXT_PUBLIC_SKIP_STEPS && (
             <nav>
