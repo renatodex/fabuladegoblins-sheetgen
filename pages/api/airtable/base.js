@@ -4,12 +4,11 @@ export async function list (resource, options = {}) {
   const API_KEY = process.env.AIRTABLE_API_KEY
 
   options.maxRecords = options.maxRecords || 20
-  options.view = options.view || 'Grid%20view'
+  options.view = options.view || 'Geral'
   options.filterByFormula = encodeURIComponent(options.filterByFormula || '')
 
   let url = `${BASE_URL}/${APP_ID}/${resource}?maxRecords=${options.maxRecords}&view=${options.view}&filterByFormula=${options.filterByFormula}`
-  console.log('URL', url)
-
+  
   const data = await fetch(
     url,
     { headers: { 'Authorization': `Bearer ${API_KEY}` }
